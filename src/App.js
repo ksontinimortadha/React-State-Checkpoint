@@ -5,8 +5,7 @@ import Card from 'react-bootstrap/Card';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 
-
-
+// person class
 class App extends Component {
   state = {
     person: {
@@ -19,22 +18,37 @@ class App extends Component {
     mountTime: 0,
   };
 
+  // toggle button
   toggleShow = () => {
     this.setState((prevState) => ({
       shows: !prevState.shows,
     }));
   };
 
+  // time interval  
   componentDidMount() {
-    this.setState({ mountTime: new Date().getTime() });
+    this.setState({ 
+      mountTime: new Date().getTime(),
+      elapsedTime: 0,
+    });
+
+    this.interval = setInterval(() => {
+      this.setState((prevState) => ({
+        elapsedTime: Math.floor((new Date().getTime() - prevState.mountTime) / 1000),
+      }));
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
   }
 
   render() {
-    const { person, shows, mountTime } = this.state;
-
+    const { person, shows, elapsedTime } = this.state;
     return (
         <>
       <div className="App">
+        {/* toggle button */}
         <div>
       <ToggleButtonGroup type="checkbox" size="lg" defaultValue={[1, 3]} className="mb-2" style={{marginTop:'15px'}}>
         <ToggleButton variant="light"id="tbg-check-1" value={0} size="lg" onClick={this.toggleShow} style={{alignContent:'center'}}>
@@ -43,6 +57,7 @@ class App extends Component {
       </ToggleButtonGroup>
         </div>
         
+        {/* profile card */}
         {shows && (
           <div>
             <Card border="secondary" style={{ width: '18rem', marginLeft:'510px',marginTop:'15px',color:'#fff',background: 'rgba(255, 255, 255, 0.1)',backdropFilter: 'blur(20px)' }}>
@@ -57,7 +72,8 @@ class App extends Component {
             </Card>
           </div>
         )}
-        <small style={{color:'#fff'}}>Mounted {Math.floor((new Date().getTime() - mountTime) / 1000)} seconds ago</small>
+        {/* time interval  */}
+        <small style={{color:'#fff'}}>Mounted {elapsedTime} seconds ago</small>
       </div>
         </>
     );
