@@ -1,5 +1,12 @@
 body {
-  margin: 0;
+  background-image: url('https://img.freepik.com/free-photo/abstract-luxury-gradient-blue-background-smooth-dark-blue-with-black-vignette-studio-banner_1258-52393.jpg?w=826&t=st=1701255724~exp=1701256324~hmac=445b8351b91aa7d1331c0b3712a8ccc5d5ca0a4deefba1a45cc8fd8c13ff1229');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center ;
+  height: 600px;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
