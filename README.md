@@ -8,19 +8,8 @@ Welcome to My React App! This is a simple React application with a class-based c
 - Toggling profile display with a button.
 - Tracking time since component mount using the component lifecycle.
 
-## Installation
+## Components
 
-1. Clone the repository:
+- App (Class-based Component) :
 
-   ```
-   git clone https://github.com/your-username/your-react-app.git
-exit
-   
-   2. Navigate to the project directory:
-
-    cd your-react-app
-exit
-
- 4. Install dependencies:
-  ```
-   npm install
+The App component is a class-based React component with state. It includes a button to toggle the display of a person's profile and a field showing the time since the component was mounted.
