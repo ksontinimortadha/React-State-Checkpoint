@@ -12,11 +12,10 @@ Welcome to My React App! This is a simple React application with a class-based c
 
 1. Clone the repository:
 
-   ```bash
+   ```
    git clone https://github.com/your-username/your-react-app.git
 exit
    
-
    2. Navigate to the project directory:
 
     cd your-react-app
